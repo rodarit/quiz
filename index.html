@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link href="css/style_gameshow.css" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+	
+	<title>GameShow</title>
+
+</head>
+
+<body>
+	<section>
+		<a href="index.html">intro-page</a>
+		<a href="wrap-page.html">wrap-page</a>
+		<a href="qestion-page.html">qestion-page</a>
+		<a href="ountro-page.html">ountro-page</a>
+	</section>
+	<div class="wreapper">
+		<div class="box">
+
+			<div class="gameshowtitle">
+				<p>Room 12's European adventure?</p>
+			</div>
+
+			<div class="playerbox">
+				<span class="playerleft_1">Biff</span>
+				<span class="playerright_2">Albert</span>
+			</div>
+
+			<div class="logo">
+			</div>
+
+		</div>   
+	</div>
+
+	<audio id="intro1" src="audio/intro1.mp3" autoplay></audio>
+	<script src="js/jquery-3.2.1.js"></script>
+	<script  type="text/javascript">
+		$(document).ready(function(){
+			$('.wreapper').css({opacity:'0'});
+			$('.logo').css({	opacity:'0',
+				width:'300px',
+				height:'300px',
+				right:'350px',
+				bottom:'50%',
+				marginBottom:'-150px'
+			});
+			setTimeout(function () {
+				$('.wreapper').animate({'opacity':'1'},'500');
+				$('.logo').animate({'opacity':'1'},'500');
+			}, 250);
+
+			setTimeout(function () {
+				$('.logo').animate({	width:'220px',
+					height:'220px',
+					right:'0',
+					bottom:'20px',
+					marginBottom:'0'
+				},'1000');
+			}, 2000);
+			/******************************************************/  		
+			$('.gameshowtitle p').css({		fontSize:'3em',
+				position:'absolute',
+				left:'-1500px',
+				paddingTop:'10%'
+			});
+			setTimeout(function () {	
+				$('.gameshowtitle p').animate({left:'131px'}, '250');
+				$('.gameshowtitle p').animate({left:'111px'}, '500');
+			}, 1250);
+
+			var i=0 
+			$('html').click(function qqq(){
+				if (i==0){
+					$('.gameshowtitle p').animate({		paddingTop:'10px',
+						left:'0',
+						fontSize:'2.2em'},
+						'500');
+
+					setTimeout(function () {
+						$('.playerleft_1').animate({left:'250px'}, "500");
+					}, 500);
+					i=1
+				}
+				else {	
+					$('.playerleft_1').animate({left:'0px'}, "500");
+					$('.playerright_2').animate({left:'0px'}, "500");
+
+				}
+			});
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link href="css/style_gameshow.css" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+	<title>GameShow</title>
+	
+</head>
+
+<body>
+	<section>
+		<a href="index.html">intro-page</a>
+		<a href="wrap-page.html">wrap-page</a>
+		<a href="qestion-page.html">qestion-page</a>
+		<a href="ountro-page.html">ountro-page</a>
+	</section>
+	<div class="wreapper">
+		<div class="box">
+			
+			<div class="gameshowtitle">
+				<p>Room 12's European adventure?</p>
+			</div>
+			
+			<div class="qwestion">
+				<p>The sity of Naples is in what country?</p>
+			</div> 
+			
+			<div class="scoreboard">
+				<p>Biff<span>0</span></p>
+				<p>Albert<span>10</span></p>       
+			</div>    	     
+			
+			<div class="answer">
+				<p><a href="#" class="answer_a"><span class="wronganswer">Germany</span></a></p>
+				<p><a href="#" class="answer_b"><span class="wronganswer">France</span></a></p>
+				<p><a href="#" class="answer_c"><span class="correctanswer">Italy</span></a></p>
+				<p><a href="#" class="answer_d"><span class="wronganswer">Spain</span></a></p>
+			</div>
+			
+			<div class="logo"> 
+			</div>
+			
+		</div>   
+	</div>
+	<script src="js/jquery-3.2.1.js"></script>
+	<script>
+		$(document).ready(function(){
+			
+			setTimeout(function () {
+				$('.qwestion').animate({"bottom": "0"}, "1000");
+			}, 1000);
+			
+			setTimeout(function () {
+				$('.answer_a').animate({"right": "0"}, "600");
+				$('.answer_a').animate({"right": "5%"}, "600");
+			}, 1500);
+			
+			setTimeout(function () {
+				$('.answer_b').animate({"right": "0"}, "600");
+				$('.answer_b').animate({"right": "25%"}, "600");
+			}, 2400);
+			
+			setTimeout(function () {
+				$('.answer_c').animate({"right": "0"}, "600");
+				$('.answer_c').animate({"right": "12%"}, "600");
+			}, 2100);
+			
+			setTimeout(function () {
+				$('.answer_d').animate({"right": "0"}, "600");
+				$('.answer_d').animate({"right": "18%"}, "600");
+			}, 1800);
+			
+			$('.correctanswer').click(function(){
+				$(this).css({'color':'#000','background-color':'#FF0'});
+			});			
+			$('.wronganswer').click(function(){
+				$(this).css({'color':'#333','background-color':'#000'});
+			})
+		});
+	</script>
+</body>
+</html>

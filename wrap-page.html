@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link href="css/style_gameshow.css" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+	<title>GameShow</title>
+	<script src="js/jquery-3.2.1.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('.scoreboard').css({	opacity:'0',
+				transform:'scale(2,2)',
+				right:'50%',
+				top:'50%',
+				marginRight:'-110px',
+				marginTop:'-75px'});
+			
+			setTimeout(function () {
+				$('.scoreboard').animate({opacity:'1'}, 500);
+			}, 250);
+			$('.playerright_2').css({position:'absolute',
+				left:'50%',
+				top:'50%',
+				transform:'scale(0.01,0.01)',
+				opacity:'0',
+				marginLeft:'-225px',
+				marginTop:'-90px'});
+			
+			
+			$('html').click(function(){
+				$('.playerright_2').animate({opacity:'1'}, 50);
+				var deg = 0;
+				var s = 0.001;
+				
+				setInterval(function(){
+					if (deg < 1445 && s < 1.7)  {
+						var val = 'rotate(' + deg + 'deg)',
+						sca_m = 'scale(' + s ,
+						sca = sca_m + ',' + s +')';
+						$('.playerright_2').css({transform: val + ' ' + sca});
+						s = s + 0.046;
+						deg = deg + 19.5;
+					}
+				}, 10);
+			});
+			
+		});
+	</script>
+</head>
+
+<body>
+	<section>
+		<a href="index.html">intro-page</a>
+		<a href="wrap-page.html">wrap-page</a>
+		<a href="qestion-page.html">qestion-page</a>
+		<a href="ountro-page.html">ountro-page</a>
+	</section>
+	<div class="wreapper">
+		<div class="box">
+			
+			<div class="gameshowtitle">
+				<p>Room 12's European adventure?</p>
+			</div>      
+			
+			<div class="scoreboard">
+				<p>Biff<span>0</span></p>
+				<p>Albert<span>10</span></p>       
+			</div>    	     
+			
+			<div class="logo"> 
+			</div>
+			
+			<span class="playerright_2">Albert</span>
+			
+		</div>   
+	</div>
+	
+</body>
+</html>
